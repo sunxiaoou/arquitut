@@ -16,7 +16,7 @@
       <property name="target">myserver</property>
       <property name="outputToConsole">true</property>
       <!-- property name="allowConnectingToRunningServer">true</property -->
-      <!-- property name="timeout">60</property -->
+      <property name="timeout">300</property>
     </configuration>
   </container>
 </arquillian>
