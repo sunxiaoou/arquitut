@@ -134,7 +134,7 @@
           <scope>provided</scope>
         </dependency>
       </dependencies>
-	  <build>
+      <build>
         <resources>
           <resource>
             <directory>src/test/resources/remote</directory>
@@ -154,20 +154,27 @@
           <scope>test</scope>
         </dependency>
         <dependency>
+          <groupId>org.jboss.spec</groupId>
+          <artifactId>jboss-javaee-6.0</artifactId>
+          <version>1.0.0.Final</version>
+          <exclusions>
+            <exclusion>
+              <!-- conflict to wls-managed adapter -->
+              <groupId>org.jboss.resteasy</groupId>
+              <artifactId>jaxrs-api</artifactId>
+            </exclusion>
+          </exclusions>
+          <type>pom</type>
+          <scope>provided</scope>
+        </dependency>
+        <dependency>
           <groupId>org.jboss.arquillian.container</groupId>
           <artifactId>arquillian-wls-managed-12.1.x</artifactId>
           <version>1.0.2.Final-SNAPSHOT</version>
           <scope>test</scope>
         </dependency>
-        <dependency>
-          <groupId>org.jboss.spec</groupId>
-          <artifactId>jboss-javaee-6.0</artifactId>
-          <version>1.0.0.Final</version>
-          <type>pom</type>
-          <scope>provided</scope>
-        </dependency>
       </dependencies>
-	  <build>
+      <build>
         <resources>
           <resource>
             <directory>src/test/resources/managed</directory>
